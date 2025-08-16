@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Criatura - Estudos Bíblicos & Quiz</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/616/616494.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: url('https://drive.google.com/uc?export=view&id=1gbJeFvH--bwSk3lXTkG_suIflIbEGni2') no-repeat center center fixed;
+            background-size: cover;
+            color: #222;
+            min-height: 100vh;
+        }
+        main {
+            max-width: 700px;
+            margin: 32px auto;
+            background: rgba(255,255,255,0.96);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            padding: 32px 24px;
+        }
+        header {
+            background: linear-gradient(90deg, #ffd700 60%, #fffbe7 100%);
+            color: #0d1b2a;
+            text-align: center;
+            padding: 48px 20px 32px 20px;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(255,215,0,0.15);
+            border-bottom: 2px solid #fffbe7;
+        }
+        .capa-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fffbe7;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            margin-bottom: 16px;
+            background: #fffbe7;
+        }
+        nav {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        nav a {
+            color: #fffbe7;
+            background: #0d1b2a;
+            padding: 10px 20px;
+            margin: 0 6px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.12);
+            transition: background 0.2s;
+        }
+        nav a:focus, nav a:hover {
+            background: #ffd700;
+            color: #0d1b2a;
+            outline: 2px solid #fffbe7;
+        }
+        main {
+            max-width: 700px;
+            margin: 32px auto;
+            background: linear-gradient(135deg, #fff176 0%, #f06292 100%);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            padding: 32px 24px;
+        }
+        h1 {
+            font-size: 2.7em;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 0 #fffbe7;
+        }
+        h2 {
+            color: #0d1b2a;
+            margin-top: 32px;
+            text-shadow: 1px 1px 0 #ffd700;
+        }
+        p, li {
+            font-size: 1.15em;
+            line-height: 1.6;
+        }
+        .cronologia-lista {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0 32px 0;
+        }
+        .cronologia-lista a {
+            background: #ffd700;
+            color: #0d1b2a;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 1px 4px rgba(255,215,0,0.15);
+            transition: background 0.2s, color 0.2s;
+        }
+        .cronologia-lista a:hover {
+            background: #0d1b2a;
+            color: #ffd700;
+        }
+        .quiz {
+            margin-top: 32px;
+        }
+        .quiz-pergunta {
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #0d1b2a;
+            text-shadow: 1px 1px 0 #ffd700;
+        }
+        .quiz-opcao {
+            display: block;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background: #ffd700;
+            color: #0d1b2a;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 1px 4px rgba(255,215,0,0.15);
+            transition: background 0.2s;
+        }
+        .quiz-opcao:hover {
+            background: #0d1b2a;
+            color: #ffd700;
+        }
+        .quiz-feedback {
+            margin-top: 10px;
+            font-weight: 500;
+            color: #0d1b2a;
+        }
+        footer {
+            background: linear-gradient(90deg, #ffd700 60%, #fffbe7 100%);
+            color: #0d1b2a;
+            text-align: center;
+            padding: 24px 10px 16px 10px;
+            border-radius: 0 0 12px 12px;
+            margin-top: 48px;
+            box-shadow: 0 -2px 12px rgba(255,215,0,0.12);
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 10px 2px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .capa-img {
+                width: 70px;
+                height: 70px;
+            }
+            nav a {
+                padding: 8px 10px;
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <img src="https://drive.google.com/uc?export=view&id=1gbJeFvH--bwSk3lXTkG_suIflIbEGni2" alt="Foto de capa Nova Criatura" class="capa-img">
+    <h1>Nova Criatura</h1>
+    <h2 style="font-size:1.3em; font-weight:400; margin-top:8px; color:#fff; text-shadow:1px 1px 0 #e91e63;">Estudos Bíblicos & Quiz</h2>
+        <nav>
+            <a href="#cronologia">Cronologia</a>
+            <a href="#estudos">Estudos</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+    <main>
+        <section id="reflexoes" style="margin-bottom:32px;">
+            <h2>Reflexões Bíblicas</h2>
+            <label for="versiculo-select" style="font-weight:500;">Escolha um versículo:</label>
+            <select id="versiculo-select" style="margin:0 12px 18px 12px; padding:6px 12px; border-radius:6px;">
+                <option value="salmo23">Salmo 23:1</option>
+                <option value="filipenses413">Filipenses 4:13</option>
+                <option value="joao316">João 3:16</option>
+            </select>
+            <div id="reflexao-img" style="text-align:center; margin-bottom:12px;"></div>
+            <div id="reflexao-texto" style="font-size:1.12em; text-align:center;"></div>
+        </section>
+            <h2>Cronologia Bíblica</h2>
+            <div class="cronologia-lista">
+                <a href="https://www.bibliaonline.com.br/acf/genesis" target="_blank">Gênesis</a>
+                <a href="https://www.bibliaonline.com.br/acf/exodo" target="_blank">Êxodo</a>
+                <a href="https://www.bibliaonline.com.br/acf/levitico" target="_blank">Levítico</a>
+                <a href="https://www.bibliaonline.com.br/acf/numeros" target="_blank">Números</a>
+                <a href="https://www.bibliaonline.com.br/acf/deuteronomio" target="_blank">Deuteronômio</a>
+                <!-- Adicione mais livros conforme desejar -->
+            </div>
+        </section>
+        <section id="estudos">
+            <h2>Estudos em Destaque</h2>
+            <ul>
+                <li><a href="https://www.bibliaonline.com.br/acf/joao" target="_blank">Evangelho de João</a></li>
+                <li><a href="https://www.bibliaonline.com.br/acf/romanos" target="_blank">Romanos</a></li>
+                <li><a href="https://www.bibliaonline.com.br/acf/salmos" target="_blank">Salmos</a></li>
+            </ul>
+            <div style="margin-top:32px;">
+                <h3 style="color:#2196f3;">Mapas Geográficos Bíblicos</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:18px; justify-content:center;">
+                    <div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Map_of_Exodus.png" alt="Mapa Êxodo" style="max-width:220px; border-radius:8px; box-shadow:0 2px 8px rgba(33,150,243,0.12);">
+                        <p style="text-align:center; font-size:0.95em;">Êxodo - Jornada do povo de Israel</p>
+                    </div>
+                    <div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Map_of_Paul%27s_journey.png" alt="Mapa Viagens de Paulo" style="max-width:220px; border-radius:8px; box-shadow:0 2px 8px rgba(33,150,243,0.12);">
+                        <p style="text-align:center; font-size:0.95em;">Viagens Missionárias de Paulo</p>
+                    </div>
+                </div>
+                <div style="margin-top:18px;">
+                    <h4 style="color:#e91e63;">Referências</h4>
+                    <ul style="font-size:0.98em;">
+                        <li><a href="https://pt.wikipedia.org/wiki/Geografia_da_B%C3%ADblia" target="_blank">Geografia da Bíblia (Wikipedia)</a></li>
+                        <li><a href="https://www.bibliaonline.com.br/mapas" target="_blank">Mapas Bíblicos - Bíblia Online</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="quiz" class="quiz">
+            <h2>Quiz Bíblico</h2>
+            <div id="quiz-container">
+                <!-- Quiz será renderizado aqui -->
+            </div>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Email: <a href="mailto:ronaroipda@gmail.com">ronaroipda@gmail.com</a></p>
+            <p>Telefone: <a href="tel:27992629497">(27) 99262-9497</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>App Estudos Bíblicos & Quiz &copy; 2025 | Desenvolvido por você</p>
+    </footer>
+    <script>
+        // Reflexões Bíblicas
+        const reflexoes = {
+            salmo23: {
+                img: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
+                texto: '“O Senhor é o meu pastor; nada me faltará.”<br>Confie que Deus cuida de cada detalhe da sua vida, mesmo nos momentos difíceis.'
+            },
+            filipenses413: {
+                img: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80',
+                texto: '“Posso todas as coisas naquele que me fortalece.”<br>Com fé, você supera qualquer desafio, pois Deus te fortalece.'
+            },
+            joao316: {
+                img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+                texto: '“Porque Deus amou o mundo de tal maneira...”<br>O amor de Deus é maior que qualquer erro. Receba esse amor todos os dias.'
+            }
+        };
+        function renderReflexao() {
+            const select = document.getElementById('versiculo-select');
+            const reflexao = reflexoes[select.value];
+            document.getElementById('reflexao-img').innerHTML = `<img src="${reflexao.img}" alt="Imagem Reflexão" style="max-width:320px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.13); margin-bottom:10px;">`;
+            document.getElementById('reflexao-texto').innerHTML = reflexao.texto;
+        }
+        document.getElementById('versiculo-select').addEventListener('change', renderReflexao);
+        renderReflexao();
+        // Quiz Bíblico
+        const quizData = [
+            {
+                pergunta: "Qual é o primeiro livro da Bíblia?",
+                opcoes: ["Gênesis", "Êxodo", "Mateus", "Salmos"],
+                resposta: 0
+            },
+            {
+                pergunta: "Quem construiu a arca?",
+                opcoes: ["Moisés", "Noé", "Abraão", "Davi"],
+                resposta: 1
+            },
+            {
+                pergunta: "Qual apóstolo negou Jesus três vezes?",
+                opcoes: ["Pedro", "João", "Tiago", "Paulo"],
+                resposta: 0
+            }
+        ];
+        let quizIndex = 0;
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            if (quizIndex >= quizData.length) {
+                container.innerHTML = '<p>Parabéns! Você concluiu o quiz.</p>';
+                return;
+            }
+            const q = quizData[quizIndex];
+            let html = `<div class='quiz-pergunta'>${q.pergunta}</div>`;
+            q.opcoes.forEach((op, i) => {
+                html += `<button class='quiz-opcao' onclick='responderQuiz(${i})'>${op}</button>`;
+            });
+            html += `<div class='quiz-feedback' id='quiz-feedback'></div>`;
+            container.innerHTML = html;
+        }
+        function responderQuiz(opcao) {
+            const q = quizData[quizIndex];
+            const feedback = document.getElementById('quiz-feedback');
+            if (opcao === q.resposta) {
+                feedback.textContent = 'Correto!';
+                setTimeout(() => {
+                    quizIndex++;
+                    renderQuiz();
+                }, 900);
+            } else {
+                feedback.textContent = 'Tente novamente.';
+            }
+        }
+        renderQuiz();
+    </script>
+</body>
+</html>
